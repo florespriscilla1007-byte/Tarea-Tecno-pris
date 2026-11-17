@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Proyecto educativo interactivo sobre los módulos 20 al 27 de Fundamentos de Ciberseguridad.">
+  <title>CyberSafe | Explorando la Ciberseguridad</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+</head>
+
+<body>
+  <div class="progress-line" id="readingProgress"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#inicio">
+      <span class="brand-icon">✦</span>
+      <span>Cyber<span class="brand-accent">Safe</span></span>
+    </a>
+
+    <nav class="main-nav">
+      <a href="#modulos">Módulos</a>
+      <a href="#glosario">Glosario</a>
+      <a href="#reto">Reto final</a>
+      <a href="#conclusion">Conclusión</a>
+    </nav>
+
+    <button class="theme-button" id="themeToggle">☾</button>
+  </header>
+
+  <main>
+    <!-- PORTADA -->
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="pulse-dot"></span>
+          PROYECTO EDUCATIVO · MÓDULOS 20–27
+        </div>
+
+        <h1>
+          Explora el mundo de la
+          <span class="gradient-text">ciberseguridad.</span>
+        </h1>
+
+        <p class="hero-lead">
+          Ocho temas, muchas formas de proteger lo digital.
+          Aprende a reconocer alertas, analizar riesgos y responder
+          a incidentes con esta guía interactiva.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#modulos">
+            Explorar módulos ↘
+          </a>
+
+          <a class="button button-ghost" href="#reto">
+            Probar mis conocimientos ✧
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div><strong>08</strong><span>módulos</span></div>
+          <div><strong>03</strong><span>zonas de aprendizaje</span></div>
+          <div><strong>100%</strong><span>interactivo</span></div>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="float-chip chip-top">⌁ Datos seguros</div>
+        <div class="float-chip chip-left">✓ Sistema protegido</div>
+        <div class="float-chip chip-right">✦ Detectar · Analizar</div>
+
+        <div class="shield">
+          <div class="shield-inner">
+            <span class="shield-star">✦</span>
+            <span class="shield-check">✓</span>
+          </div>
+        </div>
+
+        <span class="spark spark-a">✧</span>
+        <span class="spark spark-b">✦</span>
+        <span class="spark spark-c">·</span>
+      </div>
+    </section>
+
+    <!-- INTRODUCCIÓN -->
+    <section class="section-wrap intro-strip">
+      <div class="intro-icon">◎</div>
+      <div>
+        <h2>¿Qué aprenderás?</h2>
+        <p>
+          La ciberseguridad no es solo bloquear ataques:
+          también es observar, investigar, tomar decisiones
+          y aprender de cada incidente.
+        </p>
+      </div>
+    </section>
+
+    <!-- MÓDULOS -->
+    <section class="section-wrap section-block" id="modulos">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">RUTA DE APRENDIZAJE</span>
+          <h2>Los 8 módulos</h2>
+          <p>
+            Selecciona una tarjeta para abrir su resumen,
+            conceptos clave y un ejemplo cotidiano.
+          </p>
+        </div>
+
+        <div class="module-count">
+          <span id="visibleCount">08</span>
+          <small>temas</small>
+        </div>
+      </div>
+
+      <div class="module-tools">
+        <label class="search-box">
+          <span>⌕</span>
+          <input
+            id="moduleSearch"
+            type="search"
+            placeholder="Buscar un tema..."
+            aria-label="Buscar módulos"
+          >
+        </label>
+
+        <div class="filter-pills">
+          <button class="filter-pill active" data-filter="todos">Todos</button>
+          <button class="filter-pill" data-filter="red">Red y alertas</button>
+          <button class="filter-pill" data-filter="gestion">Gestión</button>
+          <button class="filter-pill" data-filter="respuesta">Respuesta</button>
+        </div>
+      </div>
+
+      <div class="module-grid" id="moduleGrid"></div>
+
+      <p class="empty-state hidden" id="emptyState">
+        No encontramos módulos con esa búsqueda. Prueba otra palabra.
+      </p>
+    </section>
+
+    <!-- GLOSARIO -->
+    <section class="section-wrap section-block glossary-section" id="glosario">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PALABRAS CLAVE</span>
+          <h2>Glosario rápido</h2>
+          <p>Conceptos importantes explicados sin complicaciones.</p>
+        </div>
+      </div>
+
+      <div class="glossary-grid" id="glossaryGrid"></div>
+    </section>
+
+    <!-- CASO PRÁCTICO -->
+    <section class="section-wrap scenario-section" id="casos">
+      <div class="scenario-card">
+        <div class="scenario-art">
+          <div class="scenario-circle">?</div>
+          <span class="scenario-star star1">✦</span>
+          <span class="scenario-star star2">✧</span>
+          <span class="scenario-star star3">✦</span>
+        </div>
+
+        <div class="scenario-copy">
+          <span class="eyebrow">PIENSA COMO ANALISTA</span>
+          <h2>¿Qué harías en esta situación?</h2>
+
+          <p>
+            Una computadora de la escuela muestra varias alertas
+            de inicio de sesión que nadie reconoce. Antes de sacar
+            conclusiones, ¿cuál sería el paso más responsable?
+          </p>
+
+          <div class="scenario-options" id="scenarioOptions">
+            <button data-correct="false">
+              Ignorar las alertas porque quizá sean un error.
+            </button>
+
+            <button data-correct="true">
+              Revisar los registros, verificar los datos y seguir
+              el procedimiento de reporte.
+            </button>
+
+            <button data-correct="false">
+              Borrar todos los registros para que no haya problemas.
+            </button>
+          </div>
+
+          <p class="scenario-feedback" id="scenarioFeedback"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CUESTIONARIO -->
+    <section class="section-wrap section-block quiz-section" id="reto">
+      <div class="section-heading">
+        <div>
+          <span class="eyebrow">PONTE A PRUEBA</span>
+          <h2>Reto final</h2>
+          <p>Repasa lo aprendido en los ocho módulos.</p>
+        </div>
+
+        <div class="quiz-badge">✧ Quiz</div>
+      </div>
+
+      <div class="quiz-card" id="quizCard">
+        <div class="quiz-top">
+          <span id="questionCounter">Pregunta 1 de 8</span>
+          <span class="quiz-score">
+            Puntos: <strong id="scoreLive">0</strong>
+          </span>
+        </div>
+
+        <div class="quiz-progress">
+          <span id="quizProgressBar"></span>
+        </div>
+
+        <h3 id="questionText"></h3>
+        <div id="answerOptions" class="answer-options"></div>
+        <p id="answerFeedback" class="answer-feedback"></p>
+
+        <div class="quiz-bottom">
+          <button class="button button-ghost" id="restartQuiz">
+            Reiniciar
+          </button>
+
+          <button class="button button-primary" id="nextQuestion" disabled>
+            Siguiente →
+          </button>
+        </div>
+      </div>
+
+      <div class="quiz-result hidden" id="quizResult">
+        <div class="result-icon">🏆</div>
+        <span class="eyebrow">RETO COMPLETADO</span>
+        <h3 id="resultTitle">¡Buen trabajo!</h3>
+        <p id="resultText"></p>
+        <div class="result-score" id="resultScore"></div>
+
+        <button class="button button-primary" id="tryAgain">
+          Volver a intentarlo ↻
+        </button>
+      </div>
+    </section>
+
+    <!-- CONCLUSIÓN -->
+    <section class="section-wrap conclusion-section" id="conclusion">
+      <div class="conclusion-icon">✦</div>
+
+      <div>
+        <span class="eyebrow">PARA RECORDAR</span>
+
+        <h2>La seguridad digital es responsabilidad de todos.</h2>
+
+        <p>
+          Los ocho módulos muestran que proteger una organización
+          requiere observar la actividad de la red, evaluar alertas,
+          actuar con ética, buscar vulnerabilidades, comprender los
+          riesgos y tener un plan para responder a incidentes.
+          La prevención, la documentación y la mejora continua son
+          claves para cuidar la información.
+        </p>
+
+        <p class="personal-reflection">
+          <strong>Reflexión personal:</strong>
+          Aprender ciberseguridad me ayuda a comprender que una buena
+          protección depende tanto de las herramientas como de las
+          decisiones de las personas. Usar la tecnología de manera
+          responsable y reportar actividades sospechosas puede marcar
+          una gran diferencia.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-wrap sources-note">
+      <span>ⓘ</span>
+      <p>
+        <strong>Nota académica:</strong>
+        Este recurso es un resumen educativo de los módulos 20 al 27
+        de Fundamentos de Ciberseguridad 3.0. Los ejemplos son
+        ilustrativos. Para una entrega formal, agrega tu nombre,
+        grupo, docente y la referencia de las presentaciones de clase.
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand" href="#inicio">
+      <span class="brand-icon">✦</span>
+      <span>Cyber<span class="brand-accent">Safe</span></span>
+    </a>
+
+    <p>Aprender hoy. Proteger mañana.</p>
+    <a href="#inicio" class="back-top">Volver arriba ↑</a>
+  </footer>
+
+  <!-- VENTANA DE CADA MÓDULO -->
+  <div class="modal hidden" id="moduleModal" role="dialog" aria-modal="true">
+    <div class="modal-backdrop" data-close-modal></div>
+
+    <article class="modal-panel">
+      <button class="modal-close" id="closeModal">×</button>
+
+      <div class="modal-topline">
+        <span id="modalNumber" class="modal-number">MÓDULO 20</span>
+        <span id="modalCategory" class="category-tag">RED Y ALERTAS</span>
+      </div>
+
+      <div class="modal-illustration" id="modalIcon">⌁</div>
+      <h2 id="modalTitle"></h2>
+      <p id="modalSummary" class="modal-summary"></p>
+
+      <div class="modal-columns">
+        <section>
+          <h3>Conceptos importantes</h3>
+          <ul id="modalConcepts"></ul>
+        </section>
+
+        <section>
+          <h3>Ejemplo cotidiano</h3>
+          <p id="modalExample" class="example-box"></p>
+        </section>
+      </div>
+
+      <div class="takeaway">
+        <span>✦</span>
+        <p>
+          <strong>Idea principal:</strong>
+          <span id="modalTakeaway"></span>
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="button button-ghost" id="prevModule">← Anterior</button>
+        <button class="button button-primary" id="nextModule">
+          Siguiente módulo →
+        </button>
+      </div>
+    </article>
+  </div>
+
+  <button id="backToTop" class="back-to-top hidden">↑</button>
+</body>
+</html>
